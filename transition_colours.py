@@ -79,8 +79,8 @@ def main():
             if complex_or_ion in got_it_right:
                 got_it_right[complex_or_ion] += 1
         else:
-            got_it_wrong[complex_or_ion] = 2
             print("Incorrect! The answer is", complexes_and_ions_colours[complex_or_ion])
+            got_it_right[complex_or_ion] = 0
 
 if __name__ == "__main__":
     main()
