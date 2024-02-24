@@ -49,7 +49,7 @@ def choose_complex_or_ion(count, previous_complex_or_ion, before_that):
     else:
         complex_or_ion = random.choice(list(complexes_and_ions_colours.keys()))
     if complex_or_ion in got_it_right and got_it_right[complex_or_ion] > 2:
-        complex_or_ion = choose_complex_or_ion(count + 1)
+        complex_or_ion = choose_complex_or_ion(count + 1, previous_complex_or_ion, before_that)
     if count > 15:
         print("You've done them all!")
         exit()
