@@ -82,7 +82,7 @@ copper = {
 
 current_test = {**complexes_and_ions_colours}
 
-
+DIFFICULTY = 2
 got_it_right = {}
 
 
@@ -112,7 +112,7 @@ def main():
             print("Correct!")
             if complex in got_it_right:
                 got_it_right[complex] += 1
-                if got_it_right[complex] == 2:
+                if got_it_right[complex] == DIFFICULTY:
                     del current_test[complex]
             else:
                 got_it_right[complex] = 1
@@ -120,6 +120,8 @@ def main():
             print(f"Incorrect! The answer is {current_test[complex]}")
             if complex in got_it_right:
                 got_it_right[complex] -= 1
+            else:
+                got_it_right[complex] = -1
 
 
 if __name__ == "__main__":
