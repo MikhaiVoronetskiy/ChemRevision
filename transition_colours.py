@@ -2,25 +2,31 @@ import random
 
 
 
-complexes_and_ions_colours = {
+complexes_metals_and_ions_colours = {
+    "Cu": "pink",
     "[Cu(H2O)6]2+": "pale blue solution",
     "[Cu(H2O)4(OH)2]": "blue precipitate",
     "[Cu(NH3)4(H2O)2]2+": "deep blue solution",
     "[CuCl4]2-": "yellow solution",
+    "Fe": "silver-white",
     "[Fe(H2O)6]2+": "pale green solution",
     "[Fe(H2O)6]3+": "yellow-brown solution",
     "[Fe(H2O)4(OH)2]": "green precipitate",
     "[Fe(H2O)3(OH)3]": "brown precipitate",
+    "Co": "silver-white",
     "[Co(H2O)6]2+": "pink solution",
     "[Co(H2O)4(OH)2]": "blue precipitate",
     "[Co(NH3)6]2+": "pale yellow solution",
     "[CoCl4]2-": "blue solution",
+    "Mn": "silver-white",
     "[Mn(H2O)6]2+": "pale pink solution",
     "[Mn(H2O)4(OH)2]": "pale brown precipitate",
+    "V": "silver-grey",
     "V 2+      V(||)": "purple",
     "V 3+      V(|||)": "green",
     "VO 2+     V(|V)": "blue",
     "VO2 +     V(V)": "yellow",
+    "Cr": "white-pale blue",
     "Cr 3+": "green",
     "Cr2O7 2-": "orange",
     "CrO4 2-": "yellow",
@@ -38,6 +44,17 @@ complexes_and_ions_colours = {
     "[Zn(H2O)2(OH)4]2-": "colourless solution",
     "[Zn(NH3)4]2+": "colourless solution",
     }
+
+
+metals = {
+    "Cu": "pink",
+    "Fe": "silver-white",
+    "Co": "silver-white",
+    "Mn": "silver-white",
+    "V": "silver-grey",
+    "Cr": "white-pale blue",
+
+}
 
 
 vanadium = {
@@ -80,9 +97,9 @@ copper = {
     "[CuCl4]2-": "yellow solution",
 }
 
-current_test = {**complexes_and_ions_colours}
+current_test = {**metals}
 
-DIFFICULTY = 2
+DIFFICULTY = 1
 got_it_right = {}
 
 
@@ -112,10 +129,12 @@ def main():
             print("Correct!")
             if complex in got_it_right:
                 got_it_right[complex] += 1
-                if got_it_right[complex] == DIFFICULTY:
+                if got_it_right[complex] >= DIFFICULTY:
                     del current_test[complex]
             else:
                 got_it_right[complex] = 1
+                if got_it_right[complex] >= DIFFICULTY:
+                    del current_test[complex]
         else:
             print(f"Incorrect! The answer is {current_test[complex]}")
             if complex in got_it_right:
