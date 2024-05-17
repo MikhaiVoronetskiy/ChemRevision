@@ -21,6 +21,9 @@ complexes_metals_and_ions_colours = {
     "Mn": "silver-white",
     "[Mn(H2O)6]2+": "pale pink solution",
     "[Mn(H2O)4(OH)2]": "pale brown precipitate",
+    "[Mn(H2O)3(OH)3]": "brown precipitate",
+    "MnO2      Mn(V)": "dark brown precipitate",
+    "MnO4 -     Mn(V||)": "pink",
     "V": "silver-grey",
     "V 2+      V(||)": "purple",
     "V 3+      V(|||)": "green",
@@ -36,9 +39,11 @@ complexes_metals_and_ions_colours = {
     "[Cr(H2O)3(OH)3]": "green precipitate",
     "[Cr(H2O)2(OH)4]-": "green solution",
     "[Cr(OH)6]3-": "green solution",
+    "Ni": "silver-white",
     "[Ni(H2O)6]2+": "green solution",
     "[Ni(H2O)4(OH)2]": "green precipitate",
     "[Ni(NH3)6]2+": "blue solution",
+    "Zn": "white-pale blue",
     "[Zn(H2O)6]2+": "colourless solution",
     "[Zn(H2O)4(OH)2]": "white precipitate",
     "[Zn(H2O)2(OH)4]2-": "colourless solution",
@@ -53,7 +58,8 @@ metals = {
     "Mn": "silver-white",
     "V": "silver-grey",
     "Cr": "white-pale blue",
-
+    "Ni": "silver-white",
+    "Zn": "white-pale blue",
 }
 
 
@@ -97,7 +103,7 @@ copper = {
     "[CuCl4]2-": "yellow solution",
 }
 
-current_test = {**metals}
+current_test = {**complexes_metals_and_ions_colours}
 
 DIFFICULTY = 1
 got_it_right = {}
